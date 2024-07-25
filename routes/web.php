@@ -13,3 +13,5 @@ Route::get('/start-workout', function () {
 Route::get('/create-workout', function () {
     return view('workout.create');
 });
+
+Route::get('/new-exercise-template', [\App\Http\Controllers\WorkoutTemplateController::class, 'store']);
