@@ -1,32 +1,38 @@
 <fieldset>
-    <legend>Exercise 1</legend>
+
+    <legend>Exercise {{$exerciseCounter}} asd</legend>
     <fieldset>
         <label for="exercise-name">Exercise Name:</label>
         <input type="text" name="Exercise Name" id="exercise-name">
     </fieldset>
 
     <fieldset>
-        <label for="sets-no">Number of sets:</label>
-        <input type="number" name="Number of sets" id="sets-no">
+        <label for="no-sets-{{$exerciseCounter}}">Number of sets:</label>
+        <input type="number" name="Number of sets" id="no-sets-{{$exerciseCounter}}">
     </fieldset>
 
     <fieldset>
-        <label for=rep-range">Rep range:</label>
-        <input type="text" name="Rep range" id=rep-range">
+        <label for=rep-range-{{$exerciseCounter}}">Rep range:</label>
+        <input type="text" name="Rep range" id=rep-range-{{$exerciseCounter}}">
     </fieldset>
 
     <fieldset>
-        <label for="pause">Pause (min):</label>
-        <input type="text" name="Pause (min)" id="pause">
+        <label for="pause-{{$exerciseCounter}}">Pause (min):</label>
+        <input type="text" name="Pause (min)" id="pause-{{$exerciseCounter}}">
     </fieldset>
 
     <fieldset>
-        <label for="rir">RIR:</label>
-        <input type="text" name="RIR" id="rir">
+        <label for="rir-{{$exerciseCounter}}">RIR:</label>
+        <input type="text" name="RIR" id="rir-{{$exerciseCounter}}">
     </fieldset>
 
     <fieldset>
-        <label for="tempo">Tempo:</label>
-        <input type="text" name="Tempo" id="tempo">
+        <label for="tempo-{{$exerciseCounter}}">Tempo:</label>
+        <input type="text" name="Tempo" id="tempo-{{$exerciseCounter}}">
+    </fieldset>
+
+    <fieldset>
+        <label for="tempo-{{$exerciseCounter}}">Notes:</label>
+        <input type="text" name="Tempo" id="tempo-{{$exerciseCounter}}">
     </fieldset>
 </fieldset>
