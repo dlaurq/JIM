@@ -15,6 +15,7 @@
             <section class="flex flex-col gap-10">
                 <a class="bg-amber-500 text-black text-2xl font-semibold px-4 py-2 rounded-lg text-center" href="start-workout">Start Workout</a>
                 <a class="border-amber-500 border-2 text-2xl font-semibold px-4 py-2 rounded-lg text-center" href="create-workout">Create Workout</a>
+                <a class="border-b-2 text-xl font-thin text-center w-fit mx-auto relative bottom-4" href="history">History</a>
             </section>
 
             <section class="flex flex-col gap-5">
