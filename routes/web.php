@@ -10,8 +10,7 @@ Route::get('/start-workout', function () {
     return view('workout.start');
 });
 
-Route::get('/create-workout', function () {
-    return view('workout.create');
-});
+Route::get('/new-exercise-template', [\App\Http\Controllers\WorkoutTemplateController::class, 'getExerciseTemplate']);
 
-Route::get('/new-exercise-template', [\App\Http\Controllers\WorkoutTemplateController::class, 'store']);
+Route::get('/create-workout', [\App\Http\Controllers\WorkoutTemplateController::class, 'get']);
+Route::post('/create-workout', [\App\Http\Controllers\WorkoutTemplateController::class, 'store']);

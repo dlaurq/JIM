@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('exercice_templates', function (Blueprint $table) {
+        Schema::create('exercise_templates', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignIdFor(\App\Models\WorkoutTemplate::class);
             $table->string('name');
-            $table->string('Number of sets');
-            $table->string('Rep range');
-            $table->string('Pause ');
-            $table->string('RIR');
-            $table->string('Tempo');
-            $table->string('Notes');
+            $table->string('number_of_sets');
+            $table->string('rep_range');
+            $table->string('pause');
+            $table->string('rir');
+            $table->string('tempo');
+            $table->string('notes');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('exercice_templates');
+        Schema::dropIfExists('exercise_templates');
     }
 };
