@@ -6,6 +6,9 @@ export default {
     ],
   theme: {
     extend: {},
+      fontFamily: {
+          rubik: ['Rubik', 'sans-serif'], // Use "Open Sans" as the default sans-serif font
+      },
   },
   plugins: [
       require('@tailwindcss/forms'),
