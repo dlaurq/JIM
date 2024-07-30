@@ -12,5 +12,6 @@
         <section id="form-container">
             @include('workout.form', ['alert' => ''])
         </section>
+        <a href="/">Back to home</a>
     </body>
 </html>

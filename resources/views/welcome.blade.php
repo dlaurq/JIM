@@ -7,18 +7,33 @@
         <title>JIM</title>
         @vite('resources/css/app.css')
     </head>
-    <body class="antialiased dark:bg-black dark:text-white flex items-center justify-center flex-col gap-5 h-screen">
-        <a href="start-workout">Start Workout</a>
+    <body class="antialiased dark:bg-black dark:text-white">
+        <main class="flex items-center justify-between flex-col gap-5 min-h-screen py-20">
 
-        <a href="create-workout">Create Workout</a>
+            <h1 class="text-5xl text-amber-500 font-bold ">JIM</h1>
 
-        <section>
-            <h2>Workouts log</h2>
-            <ul>
-                <li>W1</li>
-                <li>W2</li>
-                <li>W3</li>
-            </ul>
-        </section>
+            <section class="flex flex-col gap-10">
+                <a class="bg-amber-500 text-black text-2xl font-semibold px-4 py-2 rounded-lg text-center" href="start-workout">Start Workout</a>
+                <a class="border-amber-500 border-2 text-2xl font-semibold px-4 py-2 rounded-lg text-center" href="create-workout">Create Workout</a>
+            </section>
+
+            <section class="flex flex-col gap-5">
+                <h2 class="text-xl font-semibold text-center">Last Workouts</h2>
+                <ul class="flex gap-3">
+                    <li class="bg-white rounded-lg text-black text-lg font-semibold p-2 text-center">
+                        <h3>Push</h3>
+                        <time class="font-thin"> 5 Feb 2024</time>
+                    </li>
+                    <li class="bg-white rounded-lg text-black text-lg font-semibold p-2 text-center">
+                        <h3>Push</h3>
+                        <time class="font-thin"> 5 Feb 2024</time>
+                    </li>
+                    <li class="bg-white rounded-lg text-black text-lg font-semibold p-2 text-center">
+                        <h3>Push</h3>
+                        <time class="font-thin"> 5 Feb 2024</time>
+                    </li>
+                </ul>
+            </section>
+        </main>
     </body>
 </html>

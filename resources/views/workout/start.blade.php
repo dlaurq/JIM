@@ -7,7 +7,8 @@
         <title>JIM</title>
         @vite('resources/css/app.css')
     </head>
-    <body class="antialiased dark:bg-black dark:text-white flex items-center justify-center flex-col gap-5 h-screen">
+    <body class="antialiased dark:bg-black dark:text-white flex items-center justify-center flex-col gap-5 h-screen ">
+        <h2>Workout Template list</h2>
         <ul>
             <li><a href="/workout/{id}">Workout 1</a></li>
             <li><a href="/workout/{id}">Workout 2</a></li>
