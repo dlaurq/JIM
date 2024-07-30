@@ -9,6 +9,8 @@ class WorkoutTemplate extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function excerciseTemplates()
     {
         return $this->hasMany(ExerciseTemplate::class);

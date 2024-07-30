@@ -9,7 +9,7 @@ class ExerciseTemplate extends Model
 {
     use HasFactory;
 
-    protected $fillable   = ['name', 'number_of_sets', 'rep_range', 'pause', 'rir', 'tempo', 'notes', 'workout_template_id'];
+    protected $fillable = ['name', 'number_of_sets', 'rep_range', 'pause', 'rir', 'tempo', 'notes', 'workout_template_id'];
 
     public function workoutTemplate()
     {

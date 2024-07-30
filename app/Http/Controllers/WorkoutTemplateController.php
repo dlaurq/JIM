@@ -7,6 +7,7 @@ use App\Models\WorkoutTemplate;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\HtmlString;
 use Illuminate\View\View;
 
 class WorkoutTemplateController extends Controller
@@ -17,6 +18,8 @@ class WorkoutTemplateController extends Controller
      */
     public function get(Request $request): View {
         Cache::forget('exercise-counter');
+        Cache::add('exercise-counter', 0);
+        Cache::increment('exercise-counter');
         return view('workout.create');
     }
 
@@ -24,7 +27,6 @@ class WorkoutTemplateController extends Controller
      * Return a new Exercise Template
      */
     public function getExerciseTemplate(Request $request): View {
-        Cache::add('exercise-counter', 0);
         Cache::increment('exercise-counter');
         return view('partials.exercise-template', ['exerciseCounter' => Cache::get('exercise-counter')]);
     }
@@ -33,7 +35,7 @@ class WorkoutTemplateController extends Controller
      * Create workout template with all the exercises and redirect the user to the create workout page with a message
      * THE FUNCTION NEED A BETTER NAME
      */
-    public function store(Request $request): RedirectResponse {
+    public function store(Request $request): View {
         $data = $request->all();
         $workoutTemplate = $this->createWorkoutTemplate($data['workout_name']);
         $data['workout_template_id'] = $workoutTemplate->getKey();
@@ -41,7 +43,9 @@ class WorkoutTemplateController extends Controller
         foreach ($exercises as $exercise) {
             $this->createExerciseTemplate($exercise);
         }
-        return redirect('/create-workout');
+        $alert = new HtmlString(view('alerts.workout-template-created')->render());
+        Cache::forget('exercise-counter');
+        return view('workout.form', array('alert' => $alert));
     }
 
     private function createWorkoutTemplate(string $name): WorkoutTemplate {
