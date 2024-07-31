@@ -6,3 +6,16 @@
 body {
     @apply font-rubik;
 }
+
+label {
+    &:has(+ input[required]){
+        display: flex;
+        gap: 0.125rem;
+
+        &:after {
+            content: '*';
+            display: inline;
+            @apply text-red-500;
+        }
+    }
+}

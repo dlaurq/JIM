@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>JIM</title>
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        @vite('resources/css/app.css')
-        @vite(['resources/js/app.js'])
-    </head>
-    <body class="antialiased flex items-center justify-center flex-col gap-5 h-screen">
+@extends('layouts.app')
+@section('content')
+    <main class="flex items-center justify-between flex-col gap-5 min-h-screen py-20">
+        <h2 class="text-4xl text-amber-500 font-bold text-center">Create Workout</h2>
         <section id="form-container">
             @include('workout.form', ['alert' => ''])
         </section>
-        <a href="/">Back to home</a>
-    </body>
-</html>
+        <a class="border-b-2 mt-12" href="/">Back to home</a>
+    </main>
+@endsection
