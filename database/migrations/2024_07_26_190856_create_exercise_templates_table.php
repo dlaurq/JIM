@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('number_of_sets');
             $table->string('rep_range');
-            $table->string('pause');
-            $table->string('rir');
-            $table->string('tempo');
-            $table->string('notes');
+            $table->string('pause')->nullable();
+            $table->string('rir')->nullable();
+            $table->string('tempo')->nullable();
+            $table->string('notes')->nullable();
         });
     }
 
