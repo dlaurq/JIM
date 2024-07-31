@@ -1,19 +1,33 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('content')
+    <main class="flex items-center justify-between flex-col gap-5 min-h-screen py-20">
+        <h2 class="text-4xl text-amber-500 font-bold text-center">Start Your <br>Workout</h2>
 
-        <title>JIM</title>
-        @vite('resources/css/app.css')
-    </head>
-    <body class="antialiased dark:bg-black dark:text-white flex items-center justify-center flex-col gap-5 h-screen ">
-        <h2>Workout Template list</h2>
-        <ul>
-            <li><a href="/workout/{id}">Workout 1</a></li>
-            <li><a href="/workout/{id}">Workout 2</a></li>
-            <li><a href="/workout/{id}">Workout 3</a></li>
-            <li><a href="/workout/{id}">Workout 4</a></li>
-        </ul>
-    </body>
-</html>
+        <section class="flex flex-col gap-10 items-center relative">
+            <a class="text-xl font-medium text-blue-500 w-fit" href="select-template">Select a Template</a>
+
+            <div class="absolute px-3 top-[calc(50%-13px)] bg-black ">OR</div>
+            <hr class="w-full">
+
+            <a class="text-xl font-medium text-blue-500 w-fit" href="start">Start From Scratch</a>
+        </section>
+
+        <section class="flex flex-col gap-5">
+            <h2 class="text-xl font-semibold text-center">Last Workouts</h2>
+            <ul class="flex gap-3">
+                <li class="bg-white rounded-lg text-black text-lg font-semibold p-2 text-center">
+                    <h3>Push</h3>
+                    <time class="font-thin"> 5 Feb 2024</time>
+                </li>
+                <li class="bg-white rounded-lg text-black text-lg font-semibold p-2 text-center">
+                    <h3>Push</h3>
+                    <time class="font-thin"> 5 Feb 2024</time>
+                </li>
+                <li class="bg-white rounded-lg text-black text-lg font-semibold p-2 text-center">
+                    <h3>Push</h3>
+                    <time class="font-thin"> 5 Feb 2024</time>
+                </li>
+            </ul>
+        </section>
+    </main>
+@endsection
